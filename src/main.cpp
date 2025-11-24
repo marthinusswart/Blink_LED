@@ -5,8 +5,8 @@
 
 void setup()
 {
-    Serial.begin(115200);
-    while(!Serial);  // Wait for Serial
+    Serial.begin(9600);
+    delay(100);  
     Serial.println("setup() entered");
     pinMode(LED_PIN, OUTPUT);
     Serial.printf("LED_PIN = %d\n", LED_PIN);
