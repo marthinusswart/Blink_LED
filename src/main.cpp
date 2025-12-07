@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <DHT.h>
 #include <Ticker.h>
+#include "logger.h"
 
 #define GREEN_LED_PIN 5   // D1 = GPIO5
 #define YELLOW_LED_PIN 14 // D5 = GPIO14
@@ -11,14 +12,6 @@
 #define DHTTYPE DHT22
 #define BUTTON_PIN 2 // D4 = GPIO2
 DHT dht(DHT_PIN, DHTTYPE);
-
-#ifdef DEBUG
-#define DBG(fmt, ...) Serial.printf(fmt, ##__VA_ARGS__)       /* Debug with no line feed */
-#define DBGL(fmt, ...) Serial.printf(fmt "\n", ##__VA_ARGS__) /* Debug Line */
-#else
-#define DBG(fmt, ...)
-#define DBGL(fmt, ...)
-#endif
 
 void setIndicator(float temperature);
 void resetIndicators();
